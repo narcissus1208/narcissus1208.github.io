@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>博客框架的使用 | Bloggggggg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目的搭建博客 方法工具GitNode.js 步骤结果感想">
+  <meta name="description" content="目的搭建博客 方法百度搜索并下载工具输入指令修改配置文件 工具GitNode.js 步骤安装Git  Node.js 默认配置,下一步 npm安装工具Node.js自带,速度较慢.推荐淘宝镜像,命令行输入npm install -g cnpm –registry=https://registry.npm.taobao.org 安装Hexo博客框架npm install -g hexo-cli 新建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客框架的使用">
 <meta property="og:url" content="http://yoursite.com/2019/05/11/11-5-2019/index.html">
 <meta property="og:site_name" content="Bloggggggg">
-<meta property="og:description" content="目的搭建博客 方法工具GitNode.js 步骤结果感想">
+<meta property="og:description" content="目的搭建博客 方法百度搜索并下载工具输入指令修改配置文件 工具GitNode.js 步骤安装Git  Node.js 默认配置,下一步 npm安装工具Node.js自带,速度较慢.推荐淘宝镜像,命令行输入npm install -g cnpm –registry=https://registry.npm.taobao.org 安装Hexo博客框架npm install -g hexo-cli 新建">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-11T12:53:44.009Z">
+<meta property="og:updated_time" content="2019-05-11T15:11:11.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客框架的使用">
-<meta name="twitter:description" content="目的搭建博客 方法工具GitNode.js 步骤结果感想">
+<meta name="twitter:description" content="目的搭建博客 方法百度搜索并下载工具输入指令修改配置文件 工具GitNode.js 步骤安装Git  Node.js 默认配置,下一步 npm安装工具Node.js自带,速度较慢.推荐淘宝镜像,命令行输入npm install -g cnpm –registry=https://registry.npm.taobao.org 安装Hexo博客框架npm install -g hexo-cli 新建">
   
     <link rel="alternative" href="/atom.xml" title="Bloggggggg" type="application/atom+xml">
   
@@ -187,8 +187,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>搭建博客</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>Git<br>Node.js</p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>百度搜索并下载工具<br>输入指令<br>修改配置文件</p>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><p>Git<br>Node.js</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>安装Git  Node.js 默认配置,下一步</p>
+<p>npm安装工具Node.js自带,速度较慢.推荐淘宝镜像,命令行输入<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p>安装Hexo博客框架<br>npm install -g hexo-cli</p>
+<p>新建博客文件夹/hexo–&gt;在文件夹中右击Git Bash Here  输入指令<br>hexo init  (安装过程可能会卡住,ctrl+c 退出安装,清空文件夹/hexo,重新输入指令)</p>
+<p>启动博客,输入指令<br>hexo s<br>访问本地4000端口,可以看到默认页面,自带一个hello-world.md博客<br>文件位置:hexo\source_posts\<br>新建.md文件,编辑内容,启动博客,可以看到新建的博客</p>
+<p>下载主题yilia<br>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia<br>修改/hexo/下的.yml配置文件 theme: yilia</p>
+<p>白嫖GitHub的仓库<br>创建仓库:用户名.github.io</p>
+<p>安装hexo 的部署插件<br>cnpm install –save hexo-deployer-git</p>
+<p>配置.yml文件<br>deploy:<br>  type: git<br>  repo: GitHub仓库地址<br>  branch: master</p>
+<p>hexo d<br>部署到远端.需要设置git的用户名和邮箱:<br>git config –global user.name “github’s Name”<br>git config –global user.email “<a href="mailto:github@xx.com" target="_blank" rel="noopener">github@xx.com</a>“<br>登录github账号.</p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>访问网址 https://用户名.github.io  就可以访问博客</p>
+<h3 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h3><p>无</p>
+
       
 
       

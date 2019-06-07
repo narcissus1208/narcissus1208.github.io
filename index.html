@@ -164,6 +164,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-06-06-2019" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/06/06-06-2019/">有眼不识泰山--Ackermann()</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/06/06-06-2019/" class="archive-article-date">
+  	<time datetime="2019-06-06T12:34:26.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>今天翻起了吃灰许久的<strong><em>计算机程序的构造和解释(SICP)</em></strong>,发现了这道题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">page 24 练习1.10  下面过程计算一个称为Ackermann函数的数学函数:</span><br><span class="line">(define (A x y)</span><br><span class="line">    (cond ((= y 0) 0)</span><br><span class="line">          ((= x 0) (* 2 y))</span><br><span class="line">          ((= y 1) 2)</span><br><span class="line">          (else (A (- x 1)</span><br><span class="line">                   (A x (- y 1))))))</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">下面各表达式的值是什么:</span><br><span class="line">(A 1 10)</span><br><span class="line">(A 2 4)</span><br><span class="line">(A 3 3)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请给出过程 f g h 对给定整数值n所计算的函数的数学定义</span><br><span class="line">(define (f n) (A 0 n))</span><br><span class="line">(define (g n) (A 1 n))</span><br><span class="line">(define (h n) (A 2 n))</span><br></pre></td></tr></table></figure>
+<p>首先我尝试在大脑中进行迭代,几秒钟后大脑抛出OutOfMemory异常.<br>机智的我把代码复制到IDE中,得到了第一题的答案<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static long ackermann(long x,long y)&#123;</span><br><span class="line">        if (y==0) return 0;</span><br><span class="line">        if (x==0) return 2*n;</span><br><span class="line">        if (y==1) return 2;</span><br><span class="line">        return ackermann(y-1,ackermann(x,y-1));</span><br><span class="line">    &#125;</span><br><span class="line">    ackermann(1,10)=1024;</span><br><span class="line">    ackermann(2,4)=65536;</span><br><span class="line">    ackermann(3,3)=65536;</span><br></pre></td></tr></table></figure></p>
+<p>第二道题是当x固定,求y的函数.机智的我进行了模拟输入,把得到的结果做成表:<br>| m\n|  0 |  1 |  2 |  3 |  4 |  5 |<br>|:–:|:–:|:–:|:–:|:–:|:–:|:–:|<br>|  0 |  0 |  2 |  4 |  6 |  8 | 10 |<br>|  1 |  0 |  2 |  4 |  8 | 16 | 32 |<br>|  2 |  0 |  2 |  4 | 16 |65536| ? |<br>由表可得:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f=2*n</span><br><span class="line">g=2^n</span><br></pre></td></tr></table></figure></p>
+<p>这次是IDE抛出了异常,机智的我百度到了答案:2^65536,如果用科学计数法表示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ackermann(2,5)=2×10^19728;</span><br></pre></td></tr></table></figure></p>
+<p>作为比较<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">宇宙原子总数:10^80</span><br><span class="line">宇宙直径:8.7039e+26米</span><br></pre></td></tr></table></figure></p>
+<p>而这仅仅是参数为2和5时的结果<br>不知道天河二号调用这个函数会怎样呢</p>
+<p>推荐参考链接:<br><a href="https://www.bilibili.com/video/av39346250" target="_blank" rel="noopener">葛立恒数1</a><br><a href="https://www.bilibili.com/video/av28959097/?spm_id_from=333.788.videocard.1" target="_blank" rel="noopener">葛立恒数2</a><br><a href="https://www.bilibili.com/video/av39754588" target="_blank" rel="noopener">tree3</a></p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/06/06-06-2019/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-13-5-2019" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
